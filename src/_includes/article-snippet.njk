@@ -1,0 +1,14 @@
+  
+  <li>
+    <article class="snippet-flex">
+   <div class="image">
+    <img src="{{post.data.image}}" alt= "{{post.data.image}}" class="snippet_imag">
+    </div>
+     <div class="block">
+      <h3 class="snippet-title">{{post.data.title}}</h3>
+      <p class="snippet_meta">by {{post.data.author}} on {{post.date | postDate}}</p>
+      <p class="snippet_body">{{post.data.description}}</p>
+      <a href="{{post.url}}" class="btn btn--primary">Continue Reading</a>
+      </div>
+    </article>
+  </li>

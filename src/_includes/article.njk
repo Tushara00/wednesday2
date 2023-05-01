@@ -1,0 +1,30 @@
+--- 
+layout: 'base.njk'
+---
+
+    <main>      
+<article class="main-article">
+<div class="container container--narrow flow"> 
+    <h1 class="article-title">   
+      {{title}}
+
+   <ul>
+{% for tag in tags %}
+<li>
+<a href= "{{tag}}"> {{tag}}</a>
+</li>
+{% endfor %}
+</ul>
+
+    </h1>
+    <figure class="main-article__figure">
+      <img src="{{image}}" alt="{{imageAlt}}">
+      <figcaption>
+        This is a test
+      </figcaption>
+    </figure> 
+    {{content |safe}}
+</div>
+
+</article>
+    </main>

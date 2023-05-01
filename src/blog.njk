@@ -1,0 +1,84 @@
+---
+title: blog
+layout: 'base.njk'
+
+---
+
+ <div class="tab">      
+        <input type="radio" id="all" name="tab" checked>
+        <label for="all">All</label>      
+        <input type="radio" id="food" name="tab">
+        <label for="food">food</label>
+        <input type="radio" id="health" name="tab">
+        <label for="health">fitness</label>
+    </div>
+    <!--
+ <div class="menu">
+        <span id="food">Food</span>
+        <span id="health">Fitness</span>
+        <span id="all">All</span>
+    </div>
+-->
+    <div class="content">
+
+ {% for item in collections.fitness %}
+    <div class="tab-content {{item.data.id}} all">
+   
+        <div class="images">
+        <img src="{{item.data.image}}" alt= "{{item.data.image}}"> </img>
+    </div>
+        <h2>{{item.data.title}}</h2>
+        <p>{{item.data.description}}</p>
+    </div>
+    {%- endfor %}
+  
+</div>
+   <script>
+ const food = document.getElementById("food");
+ const all = document.getElementById("all");
+ const healthTab = document.getElementById("health");
+ const foodClass = document.querySelectorAll(".food");
+ const allClass = document.querySelectorAll(".all");
+ const health = document.querySelectorAll(".health");
+ const tab_content = document.querySelectorAll(".tab-content")
+
+
+ food.addEventListener("click", function(){
+for(let i = 0 ; i<foodClass.length; i++ ){
+    foodClass[i].classList.add('all'); 
+    for(let j = 0; j<health.length; j ++)
+    health[j].classList.remove('all');  
+}
+document.querySelectorAll(".tab-content:not(.food):not(.health)").forEach(function(elem){
+    elem.classList.remove('all')
+});
+})
+
+all.addEventListener("click", function(){
+for(let i = 0 ; i<tab_content.length; i++){
+    tab_content[i].classList.add('all');  
+}
+})
+
+healthTab.addEventListener("click", function(){
+for(let i = 0 ; i<health.length; i++){
+    console.log(health);
+    health[i].classList.add('all');  
+    for(let i =0; i<foodClass.length; i++){
+        foodClass[i].classList.remove('all')
+    }
+    
+}
+document.querySelectorAll(".tab-content:not(.food):not(.health)").forEach(function(elem){
+    elem.classList.remove('all')
+});
+console.log(not)
+
+});
+ 
+   </script> 
+
+
+
+ 
+
