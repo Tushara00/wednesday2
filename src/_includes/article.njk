@@ -18,7 +18,7 @@ layout: 'base.njk'
     </figure> 
     {{content |safe}}
 <div class="sidebar">
-<p style="margin-bottom: 1rem; font-size:2rem">Recent Post</p>
+<p>Recent Post</p>
 {% for item in collections.featured %}
 <ul><li><a href= "{{item.url}}"class="{{id}}">{{item.data.title}}</a></li></ul>
    {%- endfor %}
