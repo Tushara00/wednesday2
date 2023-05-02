@@ -510,3 +510,14 @@ p{
   width:100%;
  }
 }
+
+.arti{
+  display:flex !important;
+}
+
+.sidebar a{
+  text-decoration: underline;
+}
+.sidebar{
+  margin-bottom: 0 !important;
+}

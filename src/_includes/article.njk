@@ -4,17 +4,10 @@ layout: 'base.njk'
 
     <main>      
 <article class="main-article">
+<div class="arti">
 <div class="container container--narrow flow"> 
     <h1 class="article-title">   
       {{title}}
-
-   <ul>
-{% for tag in tags %}
-<li>
-<a href= "{{tag}}"> {{tag}}</a>
-</li>
-{% endfor %}
-</ul>
 
     </h1>
     <figure class="main-article__figure">
@@ -24,7 +17,16 @@ layout: 'base.njk'
       </figcaption>
     </figure> 
     {{content |safe}}
+<div class="sidebar">
+<p style="margin-bottom: 1rem; font-size:2rem">Recent Post</p>
+{% for item in collections.featured %}
+<ul><li><a href= "{{item.url}}"class="{{id}}">{{item.data.title}}</a></li></ul>
+   {%- endfor %}
 </div>
+</div>
+
+</div>
+
 
 </article>
     </main>

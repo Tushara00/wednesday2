@@ -2,7 +2,7 @@
 title: Sushi
 author: Kevin Powell
 date: 2021-05-15
-tags: ["fitness"]
+tags: ["fitness","featured"]
 id: food
 image: /assets/blog/article-2.jpg
 imageAlt: This is a test
